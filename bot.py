@@ -2,7 +2,9 @@ import logging
 import io
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
-from config import TELEGRAM_BOT_TOKEN
+import os
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
 from fetcher import fetch_market_data
 from analyzer import analyze_confluence
 from chart_drawer import generate_chart
